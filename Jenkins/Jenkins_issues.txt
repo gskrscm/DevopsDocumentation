@@ -1,7 +1,7 @@
- To Kill zombie process: 
+ 1) To Kill zombie process: 
  
  Jenkins.instance.getItemByFullName("ServerAudit/ServerAuditTest").getBuildByNumber(13).finish(hudson.model.Result.ABORTED, new java.io.IOException("Aborting build")); 
 
 
- To create JenkinsSlave service on windows box via cmd 
+2)  To create JenkinsSlave service on windows box via cmd 
 sc.exe create "JenkinsSlave" start= auto binPath= "D:\JenkinsSlave\jenkins-slave.exe" DisplayName= "JenkinsService" 
