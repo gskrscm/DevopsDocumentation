@@ -1,0 +1,26 @@
+Jenkins access via curl, when using role based strategy plugin. 
+
+
+Parameters:
+Type: globalRoles, projectRoles, slaveRoles
+
+
+Add Role: 
+curl -X POST localhost:8080/role-strategy/strategy/addRole --data "type=globalRoles&amp;roleName=ADM&amp;permissionIds=hudson.model.Item.Discover,hudson.model.Item.ExtendedRead&amp;overwrite=true"
+
+Remove Role(s): 
+
+curl -X POST localhost:8080/role-strategy/strategy/removeRoles --data "type=globalRoles&amp;roleNames=ADMIN,DEV"
+
+Assign Role: 
+curl -X POST localhost:8080/role-strategy/strategy/assignRole --data "type=globalRoles&amp;roleName=ADMIN&amp;sid=username"
+
+Delete SID from all roles: 
+curl -X POST localhost:8080/role-strategy/strategy/deleteSid --data "type=globalRoles&amp;sid=username"
+
+
+Unassign role: 
+curl -X POST localhost:8080/role-strategy/strategy/unassignRole --data "type=globalRoles&roleName=AMD&sid=username"
+
+List roles: 
+curl -X GET localhost:8080/role-strategy/strategy/getAllRoles
