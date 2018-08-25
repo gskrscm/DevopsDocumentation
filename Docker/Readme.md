@@ -1,9 +1,15 @@
-Cmds:
+## Useful Cmds:
 
-docker version
+- To Check Version: 
+`docker version`
 
-docker ps
+- To check list of process running:
+`docker ps`
 
-docker ps -a
+- To check all process: 
+`docker ps -a`
+
+- Login to Container: 
+`  docker exec -it <container name/ id> bash`
 
 
