@@ -3,11 +3,22 @@
 - To Check Version: 
 `docker version`
 
+#### Process:
 - To check list of process running:
 `docker ps`
 
 - To check all process: 
 `docker ps -a`
+
+
+#### Images:
+- To list images: docker images
+
+
+#### Containers: 
+- To Start Container: 
+  docker run -d --name <container name> -p 0.0.0.0:8080:80 <image name>
+    - -d: detached mode
 
 - Login to Container: 
 `  docker exec -it <container name/ id> bash`
