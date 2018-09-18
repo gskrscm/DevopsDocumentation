@@ -1,6 +1,7 @@
 ## Useful Cmds:
 
 Docker Cheat Sheet: https://github.com/wsargent/docker-cheat-sheet
+https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf
 
 - To Check Version: 
 `docker version`
