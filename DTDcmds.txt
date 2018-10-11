@@ -1,0 +1,63 @@
+
+Linux: 
+
+
+Chef: 
+
+Chef server: 
+for org in `chef-server-ctl org-list`; do echo "Node report org Chef Org $org";/opt/opscode/bin/knife node -c /etc/opscode/pivotal.rb -s https://127.0.0.1/organizations/$org list; echo ""; done | wc -l 
+
+chef-server-ctl org-list | wc -l
+
+/opt/opscode/bin/knife node -c /etc/opscode/pivotal.rb -s https://localhost/organizations/pas list
+
+Knife commands
+
+Bootstrap: 
+
+Linux:
+
+knife bootstrap server --ssh-user root  --node-name server --bootstrap-install-command "wget chef-client-rpm-url-to-download;yum install -y chef-client-12.19.36-1.el6.x86_64.rpm --nogpgcheck localinstall" --sudo -y
+
+
+
+Node
+   List: 
+ - Knife node listJC58
+   Details:
+ - knife node show <node name>
+   Attributes: 
+ - knife node show <node name> -a <attribute>
+
+
+Tag: 
+  Create:
+ - knife tag create <node name> <tag>
+ Delete : 
+ - knife tag delete <node name> <tag>
+   Search: 
+ - knife search node "tags:<tag name>"
+	
+Environment
+   List: 
+   Knife environment list
+   Create
+ - knife environment create #{envname} -d --description #{envdesc}
+   Set
+ - knife node environment_set <node name> <environment>
+   delete
+ - knife environment delete #{envname}
+   search: 
+ - knife search node "environment:<env>"
+   knife search node "environment"<env> AND platform:<windows/linux>"
+   
+ 
+ 
+ 
+ Jenkins: 
+ To Kill zombie process: Admin -> script 
+ Jenkins.instance.getItemByFullName("ServerAudit/ServerAuditTest").getBuildByNumber(13).finish(hudson.model.Result.ABORTED, new java.io.IOException("Aborting build")); 
+
+
+Jenkins Service creation in windows via cmd.  
+sc.exe create "JenkinsSlave" start= auto binPath= "D:\JenkinsSlave\jenkins-slave.exe" DisplayName= "JenkinsService" 
