@@ -16,7 +16,7 @@ https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf
 
 #### Images:
 - To list images: docker images
-- To create image: docker build -t "<name>:<tag>"
+- To create image: docker build -t "<name>:<tag>" . 
 
 
 #### Containers: 
@@ -30,5 +30,19 @@ https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf
 `  docker exec -it <container name/ id> bash`'
 
 Docker Container Lifecycle https://medium.com/@nagarwal/lifecycle-of-docker-container-d2da9f85959
+
+### Docker compose 
+- Install docker compose via pip install docker-compose 
+- Create file docker-compose.yml and sample content as below. 
+```
+version: "2"
+services:
+        jenkins:
+                ports:
+                  - "8080:8080"
+                  - "50000:50000"
+                image: jenkins-plugin
+```
+- To bring up container `docker-compose up -d`
 
 
