@@ -1,3 +1,19 @@
+## Knife configuratin after chefdk installation. 
+- Create .chef folder
+- copy pem file to .chef folder 
+- create knife.rb
+```
+current_dir = File.dirname(__FILE__)
+log_level :info
+log_location STDOUT
+node_name "chefadmin"
+client_key "#{current_dir}/chefadmin.pem"
+chef_server_url "https://chef-server/organizations/mycompany"
+cookbook_path ["#{current_dir}/../cookbooks"]
+knife[:editor] = "vim"
+```
+- knife ssl fetch 
+
 ## knife commands
 
 1. Create a cookbook.
@@ -22,6 +38,10 @@
 6.  To run cookbook from workstation
 
 `knife ssh "tags:<tag name> AND platform:<operating systme> AND chef_environment:<environment>" -x "username" -P "password" "sudo chef-client -o recipe[cookbookname]"`
+
+7. To edit chef node parameter. 
+
+`knife node edit <node name>`
 
 ----------------------------------------------
 
