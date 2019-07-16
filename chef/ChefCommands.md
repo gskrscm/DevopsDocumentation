@@ -1,4 +1,4 @@
-## Knife configuratin after chefdk installation. 
+## Knife configuration after chefdk installation. 
 - Create .chef folder
 - copy pem file to .chef folder 
 - create knife.rb
