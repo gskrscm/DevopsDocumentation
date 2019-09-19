@@ -67,6 +67,9 @@ knife[:editor] = "vim"
 
 
  then run chef-client on the server
+ 
+ ### To search nodes 
+ knife search node "tags:<tag>"
 
 
 
