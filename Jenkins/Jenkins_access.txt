@@ -1,5 +1,6 @@
 Jenkins access via curl, when using role based strategy plugin. 
 
+Reference: https://wiki.jenkins.io/display/JENKINS/Role+Strategy+Plugin
 
 Parameters:
 Type: globalRoles, projectRoles, slaveRoles
