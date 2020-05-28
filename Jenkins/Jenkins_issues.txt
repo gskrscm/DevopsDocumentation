@@ -1,5 +1,9 @@
  1) To Kill zombie process: 
+
+To get the jobs running:
+https://Jenkins:800/computer/api/xml?tree=computer[executors[currentExecutable[url]],oneOffExecutors[currentExecutable[url]]]&xpath=//url&wrapper=builds
  
+ Run this command via Script console: 
  Jenkins.instance.getItemByFullName("ServerAudit/ServerAuditTest").getBuildByNumber(13).finish(hudson.model.Result.ABORTED, new java.io.IOException("Aborting build")); 
 
 
